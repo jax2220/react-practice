@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React Hello World</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="application-root"></div>
+    <script
+        src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+    <script
+        src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
+    <script
+        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
+    <script type="text/babel">
+     function App(props) {
+  console.log(props)
+  return (
+    <header>
+        {props.children}
+    </header>
+  );
+}
+
+// Nested elements inside the App
+ReactDOM.render(
+  <App className='my-class'>
+    <header className="banner">
+      <h1>Sally's Resume</h1>
+    </header>
+    <main>
+      <section className="contact-info">
+        <header>
+          <h2>Contact Info</h2>
+        </header>
+          <address>
+            <a href="mailto:jacksonm2220@gmail.com">Email: sallymay@mail.com</a>
+            <span>(555)555-5555</span>
+          </address>
+          <img src="https://m.media-amazon.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_.jpg" alt="profile picture" />
+      </section>
+      <section className="education">
+        <header>
+          <h2>Education</h2>
+        </header>
+        <h3>High School</h3>
+        <ul>
+          <li>Whitefish High</li>
+        </ul>
+        <h3>Colleges</h3>
+        <ul>
+          <li>Montana State</li>
+        </ul>
+      </section>
+      <section className="employment">
+        <header>
+          <h2>Employment History</h2>
+        </header>
+        <div className="job-1">
+          <h3>SafeWay</h3>
+          <p>Title:Lorem ipsum</p>
+          <p>Dates of employment: 08/31/91 - 10/5/97</p>
+          <p>Job Description: Short description of the job that i was doing. talking about it some more to take up room.</p>
+        </div>
+        <div className="job-2">
+          <h3>WBC</h3>
+          <p>Title:Lorem ipsum</p>
+          <p>Dates of employment: 08/31/91 - 10/5/97</p>
+          <p>Job Description: Short description of the job that i was doing. talking about it some more to take up room.</p>
+        </div>
+      </section>
+    </main>
+  </App>,
+  document.querySelector('#application-root')
+);
+    </script>
+</body>
+</html>
